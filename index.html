@@ -2,70 +2,93 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <title>FAKES FATHERS PANELES</title>
 
 <style>
 :root {
   --fondo: #000;
-  --texto: #F5F5F5;
-  --descripcion: #A6A6A6;
-  --borde: #292929;
-  --rojo: #FF2020;
-  --borde-rojo: #8B1717;
+  --tarjeta: #111318;
+  --texto: #f6f7f8;
+  --muted: #92969e;
+  --azul: #55caff;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
-  background: #000;
+  background: var(--fondo);
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  padding: 22px 16px;
-  background: var(--fondo);
+  padding: 20px 12px calc(125px + env(safe-area-inset-bottom));
+  background: radial-gradient(ellipse at top left, #17251c, transparent 40%), var(--fondo);
   color: var(--texto);
-  font-family: -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
 main {
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
-header { margin: 10px 0 24px; }
+header {
+  padding: 6px 5px 20px;
+}
 
 h1 {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 25px;
+  font-weight: 850;
   margin: 0 0 6px;
-  letter-spacing: -.5px;
 }
 
 .subtitle {
-  color: #929292;
-  font-size: 14px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
-.section-title {
-  font-size: 22px;
+.section-heading {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 8px 5px 14px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 14px;
   margin: 0 0 14px;
-  font-weight: 750;
+  border-radius: 15px;
+  border: 1px solid #383d45;
+  background: #14161b;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: var(--azul);
+  box-shadow: 0 0 0 2px #55caff22;
 }
 
 .app {
   display: flex;
   align-items: center;
-  gap: 14px;
-  background: linear-gradient(120deg, #111, #080808);
-  border: 1px solid var(--borde);
-  border-radius: 17px;
+  gap: 12px;
+  min-height: 91px;
   padding: 12px;
-  margin: 10px 0;
+  margin: 11px 0;
+  background: linear-gradient(110deg, #203027, #111318 70%);
+  border: 1px solid #30343b;
+  border-radius: 22px;
+}
+
+.app[hidden] {
+  display: none;
 }
 
 .app-icon {
@@ -75,27 +98,24 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
-  border: 1px solid #383838;
-  border-radius: 13px;
+  background: #101216;
+  border: 1px solid #3b4149;
+  border-radius: 15px;
 }
 
 .app-icon img {
-  width: 31px;
-  height: 31px;
-  object-fit: contain;
-}
-
-.app-icon img.apple-logo {
-  filter: brightness(0) invert(1);
-  width: 32px;
-  height: 32px;
-}
-
-.app-icon img.android-logo {
   width: 34px;
   height: 34px;
   object-fit: contain;
+}
+
+.apple-logo {
+  filter: brightness(0) invert(1);
+}
+
+.android-logo {
+  width: 38px !important;
+  height: 38px !important;
 }
 
 .app-info {
@@ -104,72 +124,190 @@ h1 {
 }
 
 .app h3 {
-  margin: 0 0 4px;
-  font-size: 17px;
-  font-weight: 750;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 7px;
+  overflow-wrap: anywhere;
 }
 
 .app p {
-  color: var(--descripcion);
-  font-size: 13px;
+  font-size: 11px;
+  color: var(--muted);
   margin: 0;
 }
 
-.install {
+.status {
   display: inline-block;
-  text-align: center;
-  padding: 10px 14px;
-  border-radius: 20px;
-  background: #000;
-  color: var(--rojo);
-  border: 1px solid var(--borde-rojo);
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 14px;
-  white-space: nowrap;
+  color: #b7edbd;
+  background: #193422;
+  border: 1px solid #315c3b;
+  border-radius: 99px;
+  padding: 3px 6px;
+  margin-right: 5px;
+  font-size: 9px;
+  font-weight: 850;
 }
 
-.install:hover { border-color: var(--rojo); }
-
-footer {
-  text-align: center;
-  color: #858585;
+/* BOTONES INSTALL AZULES */
+.install {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 12px;
+  border: 1px solid #348bb5;
+  border-radius: 999px;
+  background: #101e2b;
+  color: #55caff;
   font-size: 12px;
-  margin-top: 32px;
-  padding: 12px 0;
+  font-weight: 850;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .18s ease,
+              border-color .18s ease,
+              color .18s ease,
+              transform .12s ease;
 }
 
-.notice {
+.install:active {
+  transform: scale(.96);
+  background: #12334a;
+  border-color: #55caff;
+  color: #55caff;
+}
+
+.empty-message {
   display: none;
-  background: #160808;
-  border: 1px solid #8b1717;
-  border-radius: 12px;
-  padding: 12px;
-  margin: 12px 0;
-  color: #eee;
+  color: var(--muted);
+  text-align: center;
+  padding: 22px 10px;
   font-size: 13px;
 }
 
-.notice.visible { display: block; }
+.empty-message.visible {
+  display: block;
+}
 
-@media (max-width: 380px) {
-  body { padding: 16px 10px; }
-  .app { gap: 9px; padding: 9px; }
-  .app-icon { width: 42px; height: 42px; }
+footer {
+  text-align: center;
+  color: #777d85;
+  font-size: 11px;
+  margin: 25px 0 10px;
+}
 
-  .app-icon img.apple-logo {
-    width: 26px;
-    height: 26px;
+/* BARRA FLOTANTE INFERIOR */
+.bottom-nav {
+  position: fixed;
+  z-index: 9999;
+  left: 12px;
+  right: 12px;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  max-width: 680px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  padding: 7px;
+  background: rgba(20, 22, 27, .96);
+  border: 1px solid #3a3d44;
+  border-radius: 30px;
+  box-shadow: 0 8px 32px #000b;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.bottom-nav button {
+  min-width: 0;
+  min-height: 66px;
+  padding: 7px 2px;
+  border: 1px solid transparent;
+  border-radius: 21px;
+  background: transparent;
+  color: #b7bac4;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  touch-action: manipulation;
+  transition: background .18s ease,
+              border-color .18s ease,
+              color .18s ease,
+              transform .12s ease;
+}
+
+.bottom-nav button:active {
+  transform: scale(.96);
+}
+
+.nav-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.nav-label {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* PESTAÑA ACTIVA EN AZUL */
+.bottom-nav button.active {
+  background: linear-gradient(145deg, #122b3a, #101e2b);
+  border-color: #55caff;
+  color: #55caff;
+  box-shadow: inset 0 0 0 1px #55caff18;
+}
+
+.bottom-nav button.active .nav-icon,
+.bottom-nav button.active .nav-label {
+  color: #55caff;
+}
+
+@media (max-width: 390px) {
+  body {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
-  .app-icon img.android-logo {
-    width: 29px;
-    height: 29px;
+  .app {
+    gap: 8px;
+    padding: 9px;
   }
 
-  .app h3 { font-size: 14px; }
-  .app p { font-size: 11px; }
-  .install { padding: 9px; font-size: 12px; }
+  .app-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .app h3 {
+    font-size: 12px;
+  }
+
+  .install {
+    padding: 10px 8px;
+    font-size: 10px;
+  }
+
+  .bottom-nav {
+    left: 7px;
+    right: 7px;
+    padding: 5px;
+    gap: 2px;
+  }
+
+  .bottom-nav button {
+    min-height: 62px;
+    gap: 5px;
+  }
+
+  .nav-icon {
+    font-size: 21px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+  }
 }
 </style>
 </head>
@@ -182,212 +320,325 @@ footer {
   <div class="subtitle">Official Fakes Fathers System</div>
 </header>
 
-<h2 class="section-title">
-  Paneles Installer • Fakes System
-</h2>
+<h2 class="section-heading" id="section-title">Paneles Installer</h2>
 
-<div id="notice" class="notice" role="status">
-  Este panel aún no tiene enlace de descarga. 
-</div>
+<input
+  type="search"
+  id="search-box"
+  class="search-box"
+  placeholder="Buscar paneles, Filza, 3105 o Gbox..."
+  aria-label="Buscar instaladores"
+  hidden
 
-<section aria-label="Instaladores">
 
-<!-- NUEVA CASILLA TIKTOK: PRIMERA POSICIÓN -->
-<div class="app">
+<section id="installers" aria-label="Instaladores">
+
+<!-- =========================
+     PANELES: 5 iOS
+========================= -->
+
+<div class="app" data-category="paneles" data-name="Panel iOS 1">
   <div class="app-icon">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         width="32" height="32"
-         fill="#FFFFFF"
-         role="img"
-         aria-label="TikTok">
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 0 1-2.9 2.9 2.9 2.9 0 1 1 2.9-2.9V12.2a6.35 6.35 0 1 0 3.45 5.66V10.9a8.18 8.18 0 0 0 4.77 1.53V9a4.85 4.85 0 0 1-1-.1z"/>
-    </svg>
-  </div>
-
-  <div class="app-info">
-    <h3>Mayers Oficial</h3>
-    <p>Preguntas o dudas</p>
-  </div>
-
-  <a class="install"
-     href="https://www.tiktok.com/@my2blea?_r=1&_t=ZT-9Ae1UxjrguD"
-     target="_blank"
-     rel="noopener noreferrer">↗ Seguir</a>
-</div>
-<!-- FIN CASILLA TIKTOK -->
-
-<!-- INSTALADORES iOS: 1 AL 5 -->
-<div class="app">
-  <div class="app-icon">
-    <img class="apple-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-      alt="Apple">
+    <img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
   </div>
   <div class="app-info">
-    <h3>Panel — iOS</h3>
-    <p>Versión iPhone</p>
+    <h3>Panel iOS 1</h3>
+    <p><span class="status">iOS</span>Versión iPhone</p>
   </div>
- <a class="install"
-   href="https://www.mediafire.com/file/410mg7u6lf1t8kt/N-TRUNG+VIP_1.132.1_1790954942.ipa/file"
-   target="_blank"
-   rel="noopener noreferrer">↓ Install</a>
+  <a class="install" href="https://www.mediafire.com/file/410mg7u6lf1t8kt/N-TRUNG+VIP_1.132.1_1790954942.ipa/file" target="_blank" rel="noopener noreferrer">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="apple-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-      alt="Apple">
-  </div>
-  <div class="app-info">
-    <h3>Panel — iOS</h3>
-    <p>Versión iPhone</p>
-  </div>
-  <a class="install" href="https://example.com/instalador-2"
-     data-placeholder="true">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel iOS 2">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Panel iOS 2</h3><p><span class="status">iOS</span>Versión iPhone</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_PANEL_IOS_2">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="apple-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-      alt="Apple">
-  </div>
-  <div class="app-info">
-    <h3>Panel — iOS</h3>
-    <p>Versión iPhone</p>
-  </div>
-  <a class="install" href="https://example.com/instalador-3"
-     data-placeholder="true">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel iOS 3">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Panel iOS 3</h3><p><span class="status">iOS</span>Versión iPhone</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_PANEL_IOS_3">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="apple-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-      alt="Apple">
-  </div>
-  <div class="app-info">
-    <h3>Panel — iOS</h3>
-    <p>Versión iPhone</p>
-  </div>
-  <a class="install" href="https://example.com/instalador-4"
-     data-placeholder="true">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel iOS 4">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Panel iOS 4</h3><p><span class="status">iOS</span>Versión iPhone</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_PANEL_IOS_4">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="apple-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-      alt="Apple">
-  </div>
-  <div class="app-info">
-    <h3>Panel — iOS</h3>
-    <p>Versión iPhone</p>
-  </div>
-  <a class="install" href="https://example.com/instalador-5"
-     data-placeholder="true">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel iOS 5">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Panel iOS 5</h3><p><span class="status">iOS</span>Versión iPhone</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_PANEL_IOS_5">↓ Install</a>
 </div>
 
-<!-- INSTALADORES ANDROID: 6 AL 10 -->
-<div class="app">
+<!-- =========================
+     PANELES: 5 ANDROID
+========================= -->
+
+<div class="app" data-category="paneles" data-name="Panel Android 1">
   <div class="app-icon">
-    <img class="android-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
-      alt="Android">
+    <img class="android-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android">
   </div>
-  <div class="app-info">
-    <h3>Panel — Android</h3>
-    <p>Versión para Android</p>
-  </div>
-  <a class="install"
-   href="https://www.mediafire.com/file/k47idyir0zahimp/PROXY+MTH.apk/file"
-   target="_blank"
-   rel="noopener noreferrer">↓ Install</a>
+  <div class="app-info"><h3>Panel Android 1</h3><p><span class="status">ANDROID</span>Versión Android</p></div>
+  <a class="install" href="https://www.mediafire.com/file/k47idyir0zahimp/PROXY+MTH.apk/file" target="_blank" rel="noopener noreferrer">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="android-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
-      alt="Android">
-  </div>
-  <div class="app-info">
-    <h3>Panel — Android</h3>
-    <p>Versión para Android</p>
-  </div>
-  <a class="install"
-   href="https://www.mediafire.com/file/0gs1np07on7e4tf/SRS_TEAM_V5_AIMKILL_BRUTAL_%25E2%259C%2585.apks/file"
-   target="_blank"
-   rel="noopener noreferrer">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel Android 2">
+  <div class="app-icon"><img class="android-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android"></div>
+  <div class="app-info"><h3>Panel Android 2</h3><p><span class="status">ANDROID</span>Versión Android</p></div>
+  <a class="install" href="https://www.mediafire.com/file/0gs1np07on7e4tf/SRS_TEAM_V5_AIMKILL_BRUTAL_%25E2%259C%2585.apks/file" target="_blank" rel="noopener noreferrer">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="android-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
-      alt="Android">
-  </div>
-  <div class="app-info">
-    <h3>Panel — Android</h3>
-    <p>Versión para Android</p>
-  </div>
- <a class="install"
-   href="https://www.mediafire.com/file/d39kvpdk3o79u6w/DRIP+CRACKED_v1.0(1)_mod.apk/file"
-   target="_blank"
-   rel="noopener noreferrer">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel Android 3">
+  <div class="app-icon"><img class="android-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android"></div>
+  <div class="app-info"><h3>Panel Android 3</h3><p><span class="status">ANDROID</span>Versión Android</p></div>
+  <a class="install" href="https://www.mediafire.com/file/d39kvpdk3o79u6w/DRIP+CRACKED_v1.0(1)_mod.apk/file" target="_blank" rel="noopener noreferrer">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="android-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
-      alt="Android">
-  </div>
-  <div class="app-info">
-    <h3>Panel — Android</h3>
-    <p>Versión para Android</p>
-  </div>
-  <a class="install"
-   href="https://www.mediafire.com/file/fdv1mx520htag88/TheKingCheats_V296.apks/file"
-   target="_blank"
-   rel="noopener noreferrer">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel Android 4">
+  <div class="app-icon"><img class="android-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android"></div>
+  <div class="app-info"><h3>Panel Android 4</h3><p><span class="status">ANDROID</span>Versión Android</p></div>
+  <a class="install" href="https://www.mediafire.com/file/fdv1mx520htag88/TheKingCheats_V296.apks/file" target="_blank" rel="noopener noreferrer">↓ Install</a>
 </div>
 
-<div class="app">
-  <div class="app-icon">
-    <img class="android-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg"
-      alt="Android">
-  </div>
-  <div class="app-info">
-    <h3>Panel — Android</h3>
-    <p>Versión para Android</p>
-  </div>
-  <a class="install"
-   href="https://www.mediafire.com/file/ie1fajoe2vr0uu7/M1NX+VIP+V12+INJECTOR+ATT.apk/file"
-   target="_blank"
-   rel="noopener noreferrer">↓ Install</a>
+<div class="app" data-category="paneles" data-name="Panel Android 5">
+  <div class="app-icon"><img class="android-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android"></div>
+  <div class="app-info"><h3>Panel Android 5</h3><p><span class="status">ANDROID</span>Versión Android</p></div>
+  <a class="install" href="https://www.mediafire.com/file/ie1fajoe2vr0uu7/M1NX+VIP+V12+INJECTOR+ATT.apk/file" target="_blank" rel="noopener noreferrer">↓ Install</a>
+</div>
+
+<!-- =========================
+     FILZA: LOS 5
+========================= -->
+
+<div class="app" data-category="filza" data-name="Filza 1">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Filza 1</h3><p><span class="status">iOS</span>Filza Installer</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_FILZA_1">↓ Install</a>
+</div>
+
+<div class="app" data-category="filza" data-name="Filza 2">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Filza 2</h3><p><span class="status">iOS</span>Filza Installer</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_FILZA_2">↓ Install</a>
+</div>
+
+<div class="app" data-category="filza" data-name="Filza 3">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Filza 3</h3><p><span class="status">iOS</span>Filza Installer</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_FILZA_3">↓ Install</a>
+</div>
+
+<div class="app" data-category="filza" data-name="Filza 4">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Filza 4</h3><p><span class="status">iOS</span>Filza Installer</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_FILZA_4">↓ Install</a>
+</div>
+
+<div class="app" data-category="filza" data-name="Filza 5">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Filza 5</h3><p><span class="status">iOS</span>Filza Installer</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_FILZA_5">↓ Install</a>
+</div>
+
+<!-- =========================
+     3105: LOS 5
+========================= -->
+
+<div class="app" data-category="3105" data-name="3105 1">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>3105 1</h3><p><span class="status">iOS</span>Instalador 3105</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_3105_1">↓ Install</a>
+</div>
+
+<div class="app" data-category="3105" data-name="3105 2">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>3105 2</h3><p><span class="status">iOS</span>Instalador 3105</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_3105_2">↓ Install</a>
+</div>
+
+<div class="app" data-category="3105" data-name="3105 3">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>3105 3</h3><p><span class="status">iOS</span>Instalador 3105</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_3105_3">↓ Install</a>
+</div>
+
+<div class="app" data-category="3105" data-name="3105 4">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>3105 4</h3><p><span class="status">iOS</span>Instalador 3105</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_3105_4">↓ Install</a>
+</div>
+
+<div class="app" data-category="3105" data-name="3105 5">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>3105 5</h3><p><span class="status">iOS</span>Instalador 3105</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_3105_5">↓ Install</a>
+</div>
+
+<!-- =========================
+     GBOX: LOS 2
+========================= -->
+
+<div class="app" data-category="gbox" data-name="Gbox">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Gbox</h3><p><span class="status">iOS</span>Instalador Gbox</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_GBOX">↓ Install</a>
+</div>
+
+<div class="app" data-category="gbox" data-name="Gbox UID">
+  <div class="app-icon"><img class="apple-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+  <div class="app-info"><h3>Gbox UID</h3><p><span class="status">iOS</span>Instalador Gbox UID</p></div>
+  <a class="install" href="PEGA_AQUI_EL_ENLACE_GBOX_UID">↓ Install</a>
 </div>
 
 </section>
 
-<footer>MAYERS FAKE FATHERS · FAKE SYSTEM</footer>
+<div id="empty-message" class="empty-message">
+  No se encontraron instaladores. Prueba con otro nombre.
+</div>
+
+<footer>
+  FAKES FATHERS · INSTALLER SYSTEM
+</footer>
 
 </main>
 
-<script>
-document.querySelectorAll('[data-placeholder="true"]').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
+<!-- NAVEGACIÓN INFERIOR -->
+<nav class="bottom-nav" aria-label="Navegación principal">
 
-    const notice = document.getElementById('notice');
-    notice.classList.add('visible');
-    notice.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest'
-    });
+  <button type="button" class="active" data-tab="paneles" aria-pressed="true">
+    <span class="nav-icon">☷</span>
+    <span class="nav-label">Paneles</span>
+  </button>
+
+  <button type="button" data-tab="filza" aria-pressed="false">
+    <span class="nav-icon"></span>
+    <span class="nav-label">Filza</span>
+  </button>
+
+  <button type="button" data-tab="buscar" aria-pressed="false">
+    <span class="nav-icon">⌕</span>
+    <span class="nav-label">Buscar</span>
+  </button>
+
+  <button type="button" data-tab="3105" aria-pressed="false">
+    <span class="nav-icon">▦</span>
+    <span class="nav-label">3105</span>
+  </button>
+
+  <button type="button" data-tab="gbox" aria-pressed="false">
+    <span class="nav-icon">⇩</span>
+    <span class="nav-label">Gbox</span>
+  </button>
+
+</nav>
+
+<script>
+const navButtons = [...document.querySelectorAll('.bottom-nav button')];
+const cards = [...document.querySelectorAll('.app')];
+
+const searchBox = document.getElementById('search-box');
+const sectionTitle = document.getElementById('section-title');
+const emptyMessage = document.getElementById('empty-message');
+
+const titles = {
+  paneles: 'Paneles Installer',
+  filza: 'Filza Installer',
+  buscar: 'Buscar instaladores',
+  '3105': '3105 Installer',
+  gbox: 'Gbox Installer'
+};
+
+let currentTab = 'paneles';
+
+function normalizeText(text) {
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+function renderCards() {
+  const query = normalizeText(searchBox.value);
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const category = card.dataset.category;
+    const name = card.dataset.name || card.innerText;
+
+    const matchesCategory =
+      currentTab === 'buscar' || category === currentTab;
+
+    const matchesSearch =
+      currentTab !== 'buscar' ||
+      normalizeText(name + ' ' + card.innerText).includes(query);
+
+    const show = matchesCategory && matchesSearch;
+
+    card.hidden = !show;
+
+    if (show) {
+      visibleCount++;
+    }
+  });
+
+  emptyMessage.classList.toggle('visible', visibleCount === 0);
+}
+
+function showTab(tab) {
+  currentTab = tab;
+
+  navButtons.forEach(button => {
+    const isActive = button.dataset.tab === tab;
+
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
+  });
+
+  sectionTitle.textContent = titles[tab];
+
+  searchBox.hidden = tab !== 'buscar';
+
+  if (tab !== 'buscar') {
+    searchBox.value = '';
+  }
+
+  renderCards();
+
+  if (tab === 'buscar') {
+    searchBox.focus({ preventScroll: true });
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    showTab(button.dataset.tab);
+  });
+});
+
+searchBox.addEventListener('input', () => {
+  renderCards();
+});
+
+showTab('paneles');
+
+/* Evita abrir enlaces de ejemplo que aún no has sustituido. */
+document.querySelectorAll('.install').forEach(link => {
+  link.addEventListener('click', event => {
+    const url = link.getAttribute('href') || '';
+
+    if (
+      url.startsWith('PEGA_AQUI_') ||
+      url === '#' ||
+      url.includes('example.com')
+    ) {
+      event.preventDefault();
+      alert('Este botón necesita que añadas el enlace real del instalador.');
+    }
   });
 });
 </script>
