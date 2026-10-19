@@ -372,6 +372,34 @@ footer {
   outline-color: #000000 !important;
 }
   
+  /* QUITAR EL AZUL DEL BORDE AL SELECCIONAR */
+.nav-button.active {
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+    outline: 1px solid #000000 !important;
+    background: rgba(0, 0, 0, 0.45) !important;
+}
+
+/* QUITAR EL AZUL AL TOCAR LOS BOTONES */
+.install:focus,
+.install:active,
+.nav-button:focus,
+.nav-button:active {
+    box-shadow: none !important;
+    outline-color: #000000 !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* QUITAR EL AZUL DEL CAMPO DE BUSQUEDA */
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+    outline: none !important;
+    border-color: #000000 !important;
+    box-shadow: 0 0 0 1px #000000 !important;
+}
+  
 </style>
 </head>
 
