@@ -315,65 +315,93 @@ footer {
     font-size: 9px;
   }
 
-/* ===== BOTONES SEGUIR E INSTALL ===== */
+/* ===== TEMA NEGRO TRANSLÚCIDO: SIN AZUL ===== */
 
-.follow-btn,
-.install-btn,
-.btn-follow,
-.btn-install,
-button.follow,
-button.install,
-a.follow,
-a.install {
-    background: rgba(20, 20, 24, 0.48) !important;
-    color: #111111 !important;
-    border: 1.5px solid #111111 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    border-radius: 30px !important;
+:root {
+  --azul: #111318;
 }
 
-/* Texto e iconos dentro de los botones */
-.follow-btn *,
-.install-btn *,
-.btn-follow *,
-.btn-install * {
-    color: #111111 !important;
+/* Búsqueda */
+.search-box {
+  background: rgba(15, 15, 18, 0.48) !important;
+  color: #f6f7f8 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.85) !important;
+  box-shadow: none !important;
+  outline: none !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* ===== BARRA DE BÚSQUEDA ===== */
-
-input[type="search"],
-input[type="text"],
-.search-input,
-#searchInput,
-#search {
-    background: rgba(15, 15, 18, 0.48) !important;
-    color: #111111 !important;
-    border: 1.5px solid #111111 !important;
-    box-shadow: none !important;
-    outline-color: transparent !important;
+.search-box:focus {
+  border-color: #111318 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-/* Texto de ejemplo dentro de la búsqueda */
-input[type="search"]::placeholder,
-input[type="text"]::placeholder,
-.search-input::placeholder,
-#searchInput::placeholder,
-#search::placeholder {
-    color: rgba(20, 20, 20, 0.65) !important;
-    opacity: 1 !important;
+.search-box::placeholder {
+  color: rgba(230, 230, 230, 0.65) !important;
 }
 
-/* Quitar el resplandor azul al seleccionar la búsqueda */
-input[type="search"]:focus,
-input[type="text"]:focus,
-.search-input:focus,
-#searchInput:focus,
-#search:focus {
-    border-color: #111111 !important;
-    box-shadow: none !important;
-    outline: none !important;
+/* Botones INSTALL */
+.install,
+.install:visited {
+  background: rgba(20, 20, 24, 0.28) !important;
+  color: #111318 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.9) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.install:active,
+.install:hover {
+  background: rgba(20, 20, 24, 0.48) !important;
+  color: #111318 !important;
+  border-color: #111318 !important;
+}
+
+/* Botones SEGUIR dentro de las tarjetas */
+.app a:not(.install),
+.app button {
+  background: rgba(20, 20, 24, 0.28) !important;
+  color: #111318 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.9) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Barra inferior de navegación */
+.bottom-nav {
+  background: rgba(15, 15, 18, 0.78) !important;
+  border: 1px solid rgba(0, 0, 0, 0.85) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Todas las pestañas, seleccionadas o no */
+.bottom-nav button,
+.bottom-nav button.active,
+.bottom-nav button.active .nav-icon,
+.bottom-nav button.active .nav-label {
+  background: rgba(0, 0, 0, 0.12) !important;
+  color: #d0d2d8 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Al pulsar una pestaña */
+.bottom-nav button:active {
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: #ffffff !important;
+}
+
+/* Quitar resplandores azules */
+.bottom-nav button:focus,
+.bottom-nav button:focus-visible,
+.install:focus,
+.install:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
   
 </style>
