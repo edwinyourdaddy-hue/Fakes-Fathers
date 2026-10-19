@@ -413,6 +413,51 @@ textarea:focus-visible {
     border-color: #000000 !important;
     box-shadow: 0 0 0 1px #000000 !important;
 }
+  /* BUSCADOR: BORDE NEGRO, TAMBIEN AL TOCAR */
+input,
+input:focus,
+input:focus-visible,
+input[type="search"],
+input[type="text"],
+textarea,
+textarea:focus,
+textarea:focus-visible {
+    border-color: #000000 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* BARRA INFERIOR: OPCION SELECCIONADA */
+.nav-button.active {
+    background: rgba(0, 0, 0, 0.42) !important;
+    border: 1px solid #000000 !important;
+    color: #E0E0E0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* EVITAR QUE EL TOQUE VUELVA A PONER EL AZUL */
+.nav-button:focus,
+.nav-button:focus-visible,
+.nav-button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+  
+/* MANTENER NEGRA LA OPCION SELECCIONADA */
+.nav-button.active:focus,
+.nav-button.active:focus-visible,
+.nav-button.active:active {
+    background: rgba(0, 0, 0, 0.42) !important;
+    border-color: #000000 !important;
+}
+
+/* ICONOS DE LA OPCION SELECCIONADA */
+.nav-button.active svg {
+    stroke: #E0E0E0 !important;
+}
   
 </style>
 </head>
