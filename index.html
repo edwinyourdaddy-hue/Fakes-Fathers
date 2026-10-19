@@ -251,12 +251,12 @@ footer {
   font-size: 24px;
   line-height: 1;
 }
-
+  
 .nav-label {
   font-size: 10px;
   font-weight: 800;
 }
-
+  
 /* PESTAÑA ACTIVA EN AZUL */
 .bottom-nav button.active {
   background: linear-gradient(145deg, #122b3a, #101e2b);
@@ -314,90 +314,72 @@ footer {
   .nav-label {
     font-size: 9px;
   }
-
-/* ===== TEMA NEGRO TRANSLÚCIDO: SIN AZUL ===== */
-
-:root {
-  --azul: #111318;
 }
+/* ===== TEMA NEGRO TRANSLÚCIDO ===== */
 
-/* Búsqueda */
-.search-box {
-  background: rgba(15, 15, 18, 0.48) !important;
-  color: #f6f7f8 !important;
-  border: 1.5px solid rgba(0, 0, 0, 0.85) !important;
+/* Botones Seguir e Install */
+.install,
+.app a:not(.install),
+.app button {
+  background: rgba(20, 22, 25, 0.45) !important;
+  color: #f2f2f2 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.95) !important;
   box-shadow: none !important;
-  outline: none !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  text-shadow: none !important;
+  border-radius: 999px !important;
 }
 
+/* Barra de búsqueda */
+.search-box,
 .search-box:focus {
-  border-color: #111318 !important;
-  box-shadow: none !important;
+  background: rgba(15, 17, 20, 0.42) !important;
+  color: #f2f2f2 !important;
+  border: 1.5px solid #111 !important;
   outline: none !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .search-box::placeholder {
-  color: rgba(230, 230, 230, 0.65) !important;
+  color: rgba(240, 240, 240, 0.7) !important;
 }
 
-/* Botones INSTALL */
-.install,
-.install:visited {
-  background: rgba(20, 20, 24, 0.28) !important;
-  color: #111318 !important;
-  border: 1.5px solid rgba(0, 0, 0, 0.9) !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-}
-
-.install:active,
-.install:hover {
-  background: rgba(20, 20, 24, 0.48) !important;
-  color: #111318 !important;
-  border-color: #111318 !important;
-}
-
-/* Botones SEGUIR dentro de las tarjetas */
-.app a:not(.install),
-.app button {
-  background: rgba(20, 20, 24, 0.28) !important;
-  color: #111318 !important;
-  border: 1.5px solid rgba(0, 0, 0, 0.9) !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-}
-
-/* Barra inferior de navegación */
+/* Barra flotante inferior */
 .bottom-nav {
-  background: rgba(15, 15, 18, 0.78) !important;
-  border: 1px solid rgba(0, 0, 0, 0.85) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(20, 22, 25, 0.72) !important;
+  border: 1.5px solid #08090a !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 }
 
-/* Todas las pestañas, seleccionadas o no */
+/* Todas las pestañas, incluida la activa */
 .bottom-nav button,
 .bottom-nav button.active,
+.bottom-nav button:focus,
+.bottom-nav button:focus-visible {
+  background: rgba(0, 0, 0, 0.18) !important;
+  color: #c5c6cc !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Iconos y letras de la barra inferior */
+.bottom-nav button .nav-icon,
+.bottom-nav button .nav-label,
 .bottom-nav button.active .nav-icon,
 .bottom-nav button.active .nav-label {
-  background: rgba(0, 0, 0, 0.12) !important;
-  color: #d0d2d8 !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
+  color: #c5c6cc !important;
 }
 
-/* Al pulsar una pestaña */
+/* Eliminar el azul al pulsar */
 .bottom-nav button:active {
-  background: rgba(0, 0, 0, 0.35) !important;
-  color: #ffffff !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  color: #fff !important;
 }
 
-/* Quitar resplandores azules */
-.bottom-nav button:focus,
-.bottom-nav button:focus-visible,
 .install:focus,
 .install:focus-visible {
   outline: none !important;
