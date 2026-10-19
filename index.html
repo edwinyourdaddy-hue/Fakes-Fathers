@@ -314,7 +314,7 @@ footer {
   .nav-label {
     font-size: 9px;
   }
-}
+
 /* BOTONES SEGUIR E INSTALL */
 .install {
   background: rgba(0, 0, 0, 0.30) !important;
@@ -339,37 +339,51 @@ footer {
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* OPCIONES DE LA BARRA INFERIOR */
-.nav-button {
-  background: transparent !important;
-  color: #000000 !important;
-  border: 1px solid transparent !important;
-  box-shadow: none !important;
-}
-
-/* OPCIÓN SELECCIONADA: NEGRO MÁS VISIBLE */
+/* OPCIÓN SELECCIONADA: NEGRO TRANSLÚCIDO */
 .nav-button.active {
-  background: rgba(0, 0, 0, 0.68) !important;
-  color: #FFFFFF !important;
-  border: 1px solid #000000 !important;
-  box-shadow: none !important;
+    background: rgba(0, 0, 0, 0.42) !important;
+    color: #E0E0E0 !important;
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
-/* ICONOS DE LA OPCIÓN SELECCIONADA */
+/* ICONO Y TEXTO DE LA OPCIÓN SELECCIONADA */
 .nav-button.active svg,
 .nav-button.active i {
-  color: #FFFFFF !important;
-  stroke: #FFFFFF !important;
-  fill: currentColor;
+    color: #E0E0E0 !important;
+    stroke: #E0E0E0 !important;
+    fill: currentColor;
 }
 
-/* QUITAR EL AZUL AL TOCAR LOS BOTONES */
-.install:focus,
-.install:active,
+/* ELIMINAR EL AZUL AL TOCAR O SELECCIONAR */
 .nav-button:focus,
+.nav-button:focus-visible,
 .nav-button:active {
-  box-shadow: none !important;
-  outline-color: #000000 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* MANTENER EL ESTILO NEGRO EN LA OPCIÓN ACTIVA */
+.nav-button.active:focus,
+.nav-button.active:focus-visible,
+.nav-button.active:active {
+    background: rgba(0, 0, 0, 0.42) !important;
+    border-color: #000000 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* EVITAR EL AZUL EN EL CAMPO DE BÚSQUEDA */
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+    outline: none !important;
+    border-color: #000000 !important;
+    box-shadow: 0 0 0 1px #000000 !important;
 }
   
   /* QUITAR EL AZUL DEL BORDE AL SELECCIONAR */
