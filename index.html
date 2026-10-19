@@ -315,83 +315,65 @@ footer {
     font-size: 9px;
   }
 
-/* Botones Seguir e Install */
-.install {
-  color: #000000 !important;
-  border-color: #000000 !important;
+/* ===== BOTONES SEGUIR E INSTALL ===== */
+
+.follow-btn,
+.install-btn,
+.btn-follow,
+.btn-install,
+button.follow,
+button.install,
+a.follow,
+a.install {
+    background: rgba(20, 20, 24, 0.48) !important;
+    color: #111111 !important;
+    border: 1.5px solid #111111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 30px !important;
 }
 
-/* Flechas y otros iconos dentro de los botones */
-.install svg,
-.install i {
-  color: #000000 !important;
-  stroke: #000000 !important;
+/* Texto e iconos dentro de los botones */
+.follow-btn *,
+.install-btn *,
+.btn-follow *,
+.btn-install * {
+    color: #111111 !important;
 }
 
-.install svg,
-.install i {
-  color: #000000 !important;
-  stroke: #000000 !important;
-  fill: #000000 !important;
+/* ===== BARRA DE BÚSQUEDA ===== */
+
+input[type="search"],
+input[type="text"],
+.search-input,
+#searchInput,
+#search {
+    background: rgba(15, 15, 18, 0.48) !important;
+    color: #111111 !important;
+    border: 1.5px solid #111111 !important;
+    box-shadow: none !important;
+    outline-color: transparent !important;
 }
 
-/* OPCIÓN SELECCIONADA: NEGRO TRANSLÚCIDO */
-.nav-button.active {
-    background: rgba(0, 0, 0, 0.42) !important;
-    color: #E0E0E0 !important;
-    border: 1px solid #000000 !important;
+/* Texto de ejemplo dentro de la búsqueda */
+input[type="search"]::placeholder,
+input[type="text"]::placeholder,
+.search-input::placeholder,
+#searchInput::placeholder,
+#search::placeholder {
+    color: rgba(20, 20, 20, 0.65) !important;
+    opacity: 1 !important;
+}
+
+/* Quitar el resplandor azul al seleccionar la búsqueda */
+input[type="search"]:focus,
+input[type="text"]:focus,
+.search-input:focus,
+#searchInput:focus,
+#search:focus {
+    border-color: #111111 !important;
     box-shadow: none !important;
     outline: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-.install svg,
-.install i {
-  color: #000000 !important;
-  stroke: #000000 !important;
-  fill: #000000 !important;
-}
-
-/* BARRA INFERIOR COMPLETA */
-.bottom-nav {
-  background: rgba(0, 0, 0, 0.28) !important;
-  border: 1px solid #000000 !important;
-  box-shadow: none !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* OPCIONES DE LA BARRA INFERIOR */
-.nav-button {
-  background: transparent !important;
-  color: #000000 !important;
-  border: 1px solid transparent !important;
-  box-shadow: none !important;
-}
-
-/* OPCIÓN SELECCIONADA: NEGRO MÁS VISIBLE */
-.nav-button.active {
-  background: rgba(0, 0, 0, 0.68) !important;
-  color: #FFFFFF !important;
-  border: 1px solid #000000 !important;
-  box-shadow: none !important;
-}
-
-/* ICONOS DE LA OPCIÓN SELECCIONADA */
-.nav-button.active svg,
-.nav-button.active i {
-  color: #FFFFFF !important;
-  stroke: #FFFFFF !important;
-  fill: currentColor;
-}
-
-/* QUITAR EL AZUL AL TOCAR LOS BOTONES */
-.install:focus,
-.install:active,
-.nav-button:focus,
-.nav-button:active {
-  box-shadow: none !important;
-  outline-color: #000000 !important;
 }
   
 </style>
