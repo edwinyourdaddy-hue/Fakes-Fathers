@@ -403,60 +403,29 @@ textarea:focus-visible {
     outline-color: #000000 !important;
     -webkit-tap-highlight-color: transparent;
 }
-
-/* QUITAR EL AZUL DEL CAMPO DE BUSQUEDA */
-input:focus,
-input:focus-visible,
-textarea:focus,
-textarea:focus-visible {
-    outline: none !important;
+/* 1. Opciones seleccionadas: borde negro */
+.active,
+.selected,
+[aria-selected="true"] {
     border-color: #000000 !important;
     box-shadow: 0 0 0 1px #000000 !important;
 }
-  /* BUSCADOR: BORDE NEGRO, TAMBIEN AL TOCAR */
-input,
+
+/* 2. Fondo negro transparente al seleccionar */
+.active,
+.selected,
+[aria-selected="true"] {
+    background-color: rgba(0, 0, 0, 0.48) !important;
+}
+
+/* 3. Campo de búsqueda: borde negro al tocarlo */
 input:focus,
-input:focus-visible,
-input[type="search"],
-input[type="text"],
-textarea,
 textarea:focus,
+input:focus-visible,
 textarea:focus-visible {
+    outline: none !important;
     border-color: #000000 !important;
-    outline: none !important;
-    box-shadow: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-/* BARRA INFERIOR: OPCION SELECCIONADA */
-.nav-button.active {
-    background: rgba(0, 0, 0, 0.42) !important;
-    border: 1px solid #000000 !important;
-    color: #E0E0E0 !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* EVITAR QUE EL TOQUE VUELVA A PONER EL AZUL */
-.nav-button:focus,
-.nav-button:focus-visible,
-.nav-button:active {
-    outline: none !important;
-    box-shadow: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-}
-  
-/* MANTENER NEGRA LA OPCION SELECCIONADA */
-.nav-button.active:focus,
-.nav-button.active:focus-visible,
-.nav-button.active:active {
-    background: rgba(0, 0, 0, 0.42) !important;
-    border-color: #000000 !important;
-}
-
-/* ICONOS DE LA OPCION SELECCIONADA */
-.nav-button.active svg {
-    stroke: #E0E0E0 !important;
+    box-shadow: 0 0 0 2px #000000 !important;
 }
   
 </style>
