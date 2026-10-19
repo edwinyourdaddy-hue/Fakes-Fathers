@@ -315,30 +315,63 @@ footer {
     font-size: 9px;
   }
 }
-  /* Botones Seguir e Install */
+/* BOTONES SEGUIR E INSTALL */
 .install {
+  background: rgba(0, 0, 0, 0.30) !important;
   color: #000000 !important;
-  border-color: #000000 !important;
-}
-/* Barra inferior: opción seleccionada */
-.nav-button.active {
-  color: #000000 !important;
-  border-color: #000000 !important;
+  border: 1px solid #000000 !important;
   box-shadow: none !important;
 }
 
-/* Iconos de la opción seleccionada */
-.nav-button.active svg,
-.nav-button.active i {
-  color: #000000 !important;
-  stroke: #000000 !important;
-}
-/* Flechas y otros iconos dentro de los botones */
 .install svg,
 .install i {
   color: #000000 !important;
   stroke: #000000 !important;
+  fill: #000000 !important;
 }
+
+/* BARRA INFERIOR COMPLETA */
+.bottom-nav {
+  background: rgba(0, 0, 0, 0.28) !important;
+  border: 1px solid #000000 !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* OPCIONES DE LA BARRA INFERIOR */
+.nav-button {
+  background: transparent !important;
+  color: #000000 !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+
+/* OPCIÓN SELECCIONADA: NEGRO MÁS VISIBLE */
+.nav-button.active {
+  background: rgba(0, 0, 0, 0.68) !important;
+  color: #FFFFFF !important;
+  border: 1px solid #000000 !important;
+  box-shadow: none !important;
+}
+
+/* ICONOS DE LA OPCIÓN SELECCIONADA */
+.nav-button.active svg,
+.nav-button.active i {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+  fill: currentColor;
+}
+
+/* QUITAR EL AZUL AL TOCAR LOS BOTONES */
+.install:focus,
+.install:active,
+.nav-button:focus,
+.nav-button:active {
+  box-shadow: none !important;
+  outline-color: #000000 !important;
+}
+  
 </style>
 </head>
 
